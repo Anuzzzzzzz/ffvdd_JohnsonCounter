@@ -24,4 +24,5 @@ Examples where Johnson counters are used:
 
 ![image](https://github.com/Anuzzzzzzz/ffvdd_JohnsonCounter/assets/148976244/227efa0a-f16c-402e-ac14-52dc9969a927)
 
+Overall Code Coverage is 95%
 
