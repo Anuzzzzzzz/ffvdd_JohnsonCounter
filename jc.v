@@ -1,4 +1,4 @@
-module iiitb_jc (reset,clk, q);
+module jc (reset,clk, q);
 input reset, clk;
 output reg [7:0] q;
 always @(negedge reset or posedge clk)
