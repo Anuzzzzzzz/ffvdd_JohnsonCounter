@@ -5,7 +5,11 @@
 
 A Johnson counter, also known as a "twisted ring counter" or "shift register counter," is a digital counter circuit commonly used in electronics and digital logic design. It operates as a circular shift register with bidirectional counting capabilities. These counters have 2^n states, with 'n' being the number of flip-flops used, making them suitable for counting modulo 2^n. They exhibit self-correcting behavior, automatically resolving errors caused by noise or disturbances. The counting sequence can be either the straight binary sequence or its complement, depending on the feedback connections
 
-Johnson counters are popular for applications where a cyclic counting sequence or pattern is needed, and they are relatively easy to design and implement using flip-flops and appropriate feedback connections. They are used in scenarios where a continuous loop of values is required, and the bidirectional counting capability adds to their versatility.
+Functionality:
+- If reset is low (0), the output q is set to 0, regardless of the clock signal.
+- If reset is high (1), the counter increments its value on each rising edge of the clock signal. The counter is implemented in a way that it circulates through a sequence of values, making it a Johnson counter.
+
+The line q <= {{q[6:0]},{~q[7]}}; shifts the bits of q one position to the left and inserts the negation of the MSB at the rightmost position. This effectively creates a circular shift in the 8-bit data, and the negation of the MSB ensures that the counter sequence is Johnson-encoded.
 
 Examples where Johnson counters are used:
 1. Frequency Division: Johnson counters are commonly employed in frequency dividers. By using a Johnson counter, you can divide an input frequency by a factor of 2^n. This is particularly useful in applications like clock signal generation and frequency synthesis
