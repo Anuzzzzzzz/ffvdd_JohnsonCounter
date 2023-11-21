@@ -33,6 +33,38 @@ Overall Code Coverage is 95%
 
 
 # LAYERED TESTBENCH 
+jc Module:
+The jc module is a Johnson counter that counts in a cyclic sequence. It has an 8-bit output q and supports synchronous reset (reset) and clock (clk) inputs.
+The counter logic is implemented using a conditional assignment in the always block, which shifts the bits of q to the left and includes the inverted value of q[7] when the reset is not active.
+
+jc_bfm Class:
+This class represents the Bus Functional Model (BFM) for the Johnson counter. It interacts with the interface (jc_intf) and generates transactions to stimulate the jc module.
+It includes tasks for resetting the interface and a main task for generating transactions and displaying transaction details.
+
+jc_cov Class:
+This class defines a coverage model for the Johnson counter. It utilizes a covergroup to track the coverage of each bit of the counter's output (q).
+
+environment Class:
+The environment class orchestrates the testbench components, including the generator (gen), BFM (bfm), and coverage model (cov).
+It includes tasks for pre-test setup, the main test process, and post-test verification.
+
+generator Class:
+This class is responsible for generating random transactions for the Johnson counter. It uses a mailbox (gen2bfm) to communicate with the BFM.
+
+Interface:
+This interface defines the communication protocol between the jc module and the testbench components, including clocking information and data signals.
+
+program test :
+The program initiates the testbench by creating an instance of the environment class and running the test.
+transaction Class:
+
+This class represents a transaction for the Johnson counter, storing the output values (q). It includes a display function for visualizing transaction details.
+jc_tb Module:
+
+This is the top-level module for the testbench, instantiating the jc module and connecting it to the testbench components.
+
+
+**CODE COVERAGE**
 
 ![image](https://github.com/Anuzzzzzzz/ffvdd_JohnsonCounter/assets/148976244/5c29a038-2548-4952-ba7f-506f1975e2c6)
 
