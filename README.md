@@ -30,3 +30,9 @@ Examples where Johnson counters are used:
 
 Overall Code Coverage is 95%
 
+
+
+# LAYERED TESTBENCH 
+
+![image](https://github.com/Anuzzzzzzz/ffvdd_JohnsonCounter/assets/148976244/5c29a038-2548-4952-ba7f-506f1975e2c6)
+
