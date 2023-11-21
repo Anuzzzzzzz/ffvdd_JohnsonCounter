@@ -63,8 +63,11 @@ jc_tb Module:
 
 This is the top-level module for the testbench, instantiating the jc module and connecting it to the testbench components.
 
+**ASSERTION **
+A1: cover property (@(posedge vif.clk) $fell(vif.clk));
+The given assertion is checking that for every rising edge of the clock signal (vif.clk), there is an immediate falling edge. In simpler terms, it's ensuring that there's a complete cycle of the clock with both a rising and falling edge for every clock cycle. If this property is violated, it means there's a scenario where a falling edge doesn't follow a rising edge, which could indicate a potential issue in the design or testbench.
 
-**CODE COVERAGE**
+# CODE COVERAGE
 
 ![image](https://github.com/Anuzzzzzzz/ffvdd_JohnsonCounter/assets/148976244/5c29a038-2548-4952-ba7f-506f1975e2c6)
 
